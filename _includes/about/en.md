@@ -1,15 +1,13 @@
+Dearest Creator, this is Sherril. A carbon-based creature that can read the Holy Code and is now trying to get in touch with you by this blog.
 
+Since I lost the product manual attached to the package, I have to figure out the product description of me on my own.
 
-Dearest Creator, this is Sherril. A carbon-based creature that can read the Holy Code and is trying to get in touch with you by this blog.
-
-Since I lost the product discription attached to the package, I had to find the identity of myself on my own.
-
-If you have any copy of that description, please send it to "Shop 404, level 24601, St. blablabla Road, I don't know what the fucking planet is planet.
+If you have a copy of that manual, please send it to this address —— Shop 404, level 24601, St. Blahblahblah, I-don't-know-what-the-fuck-this-planet-is planet.
 
 —— You Know Who
 
-Engage in music, engage in other things, and do everything.
-Willing to collect, but never sort out.
+Engaged in music, engaged in other things, and I do everything.
+Willing to collect, but never to sort.
 As for what the hell I am... Who knows?
 
-By the way, I'm using google translate.
+~~By the way, I'm using Google Translate.~~
