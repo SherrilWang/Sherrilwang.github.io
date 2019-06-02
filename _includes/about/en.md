@@ -6,7 +6,7 @@ Since I lost the product discription attached to the package, I had to find the 
 
 If you have any copy of that description, please send it to "Shop 404, level 24601, St. blablabla Road, I don't know what the fucking planet is planet.
 
-—— You know who
+—— You Know Who
 
 Engage in music, engage in other things, and do everything.
 Willing to collect, but never sort out.
