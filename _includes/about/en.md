@@ -7,7 +7,9 @@ If you have a copy of that manual, please send it to this address —— Shop 40
 —— You Know Who
 
 Engaged in music, engaged in other things, and I do everything.
+
 Willing to collect, but never to sort.
+
 As for what the hell I am... Who knows?
 
 ~~By the way, I'm using Google Translate.~~
