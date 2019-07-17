@@ -14,7 +14,7 @@ tags:
 
 
 
- ![图片描述-w140](https://i.loli.net/2019/07/17/5d2e9dbb3623d34138.jpg)
+ ![图片描述-w300](https://i.loli.net/2019/07/17/5d2e9dbb3623d34138.jpg)
 
 # Frequentist Statistics 
 
@@ -33,7 +33,7 @@ tags:
 一种根据前面出现的结果不断更新概率的统计过程，。
 
 ## Bayes Theorem
-![](https://i.loli.net/2019/07/17/5d2e986f7d7db82219.jpg)
+![图片描述-w300](https://i.loli.net/2019/07/17/5d2e986f7d7db82219.jpg)
 
 ## Bayesian inference
 *Models* 
@@ -50,7 +50,7 @@ tags:
 ### beta distribution
 ![](https://i.loli.net/2019/07/17/5d2e99f42580f30096.jpg)
  
- In a toss game, \alpha and \beta can be taken as the outcomes of head and tail.
+ In a toss game, $\alpha$ and $\beta$ can be taken as the outcomes of head and tail.
 
 ## Posterior Belief Distribution
 通过Prior 和 likelihood 得到 Posterior。
@@ -69,13 +69,13 @@ Get:
 ## Bayes Factor
 
 "Bayes factor is the equivalent of p-value in the bayesian framework. "
-![](https://i.loli.net/2019/07/17/5d2e9c83cfeca70926.jpg)
+![图片描述-w300](https://i.loli.net/2019/07/17/5d2e9c83cfeca70926.jpg)
 
 ## High Density Interval
 "HDI is formed from the posterior distribution after observing the new data."
 - independent of intentions and sample size
 
-![](https://i.loli.net/2019/07/17/5d2e9d00d504721202.jpg)
+![图片描述-w300](https://i.loli.net/2019/07/17/5d2e9d00d504721202.jpg)
 
 
 
