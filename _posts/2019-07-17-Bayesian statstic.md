@@ -12,9 +12,9 @@ tags:
   - notes
 ---
 
-[TOC]
 
- ![](https://i.loli.net/2019/07/17/5d2e9dbb3623d34138.jpg)
+
+ ![图片描述-w140](https://i.loli.net/2019/07/17/5d2e9dbb3623d34138.jpg)
 
 # Frequentist Statistics 
 
