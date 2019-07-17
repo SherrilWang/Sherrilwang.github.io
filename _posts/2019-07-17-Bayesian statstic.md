@@ -74,7 +74,7 @@ Get:
 ## High Density Interval
 "HDI is formed from the posterior distribution after observing the new data."
 - independent of intentions and sample size
--
+
 ![](https://i.loli.net/2019/07/17/5d2e9d00d504721202.jpg)
 
 
