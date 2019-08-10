@@ -14,6 +14,8 @@ bubble {
 /*  width: 450px;*/
 }
 
+/* Dylan 新增 */ 
+
 bubble p {
   font-size: 0.95em;
   line-height: 1.4;
@@ -56,3 +58,22 @@ bubble p.to-me.last:after {
   background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='15.515px' height='17.5px' viewBox='32.484 17.5 15.515 17.5' enable-background='new 32.484 17.5 15.515 17.5'><path fill='#E5E5EA' d='M38.484,17.5c0,8.75,1,13.5-6,17.5C51.484,35,52.484,17.5,38.484,17.5z'/></svg>") left bottom no-repeat;
   left: -6px;
 }
+
+
+/* 若浏览器支持 backdrop-filter，则不透明度为 60%，并启用高斯模糊 */
+@supports ( -webkit-backdrop-filter: none) or ( backdrop-filter: none) {
+    .navbar-custom.is-fixed {
+        background-color: rgba(255, 255, 255, 0.6);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+        position: fixed;
+        top: -61px;
+        border-bottom: 1px solid #d8d8d8;
+        -webkit-transition: -webkit-transform 0.3s;
+        -moz-transition: -moz-transform 0.3s;
+        transition: transform 0.3s;
+    }
+}
+
+
+/* Dylan 新增结束 */ 
