@@ -9,7 +9,7 @@ header-mask: 0.3
 tags:
   - Bayesian Statistics
   - Mathematics
-  - notes
+  - note
 ---
 
 
