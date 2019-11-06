@@ -12,8 +12,8 @@ tags:
   
 ---
 
-For color selection
-https://coolors.co/app
 
-Laws for UX
-https://lawsofux.com/
+[Laws for UX](https://lawsofux.com/)
+
+
+[For color selection](https://coolors.co/app)
