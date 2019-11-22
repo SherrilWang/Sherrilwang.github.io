@@ -3,7 +3,7 @@ layout: post
 title: “Resources relating to Product Design & ML"
 subtitle: 'fuck those free riders'
 author: "Sherril"
-header-img: "img/1tag-bg.jpeg"
+header-img: "img/sky.jpeg"
 
 header-mask: 0.3
 tags:
