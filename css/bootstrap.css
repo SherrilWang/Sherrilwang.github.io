@@ -6564,3 +6564,105 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+/*Dylan*/
+/*Dark Mode*/
+/*@media(prefers-color-scheme: dark){
+    .gt-container .gt-header-textarea {
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: #111;
+    }
+    .gt-container .gt-meta {
+        border-bottom: 1px solid #333;
+    }
+    .gt-container .gt-btn-preview {
+        background-color: #222;
+    }
+    .gt-container .gt-comment-admin .gt-comment-content {
+        background-color: #111;
+    }
+    .gt-container .gt-comment-body {
+        color: #CCC !important;
+    }
+    .gt-container .gt-comment-content:hover {
+        -webkit-box-shadow: 0 0.625em 3.75em 0 #000;
+        box-shadow: 0 0.625em 3.75em 0 #000;
+    }
+}*/
+
+@media(prefers-color-scheme: dark){
+    body{
+        color: #CCC;
+        background-color: #222;
+    }
+    hr{
+        border-top: 1.5px solid #333;
+    }
+    .h1, h1 {
+        color: #CCC;
+    }
+    .h2, h2 {
+        color: #CCC;
+    }
+    .h3, h3 {
+        color: #777;
+    }
+    .pager li>a {
+        color: #777;
+    }
+    .pager li>a, .pager li>span {
+        background-color: #111;
+        border: 1px solid #333;
+    }
+    .sidebar-container .tags a {
+        border-color: #444;
+    }    
+    .tags a:hover, .tags .tag:hover, .tags a:active, .tags .tag:active {
+        background-color: rgba(0,0,0,.6);
+    }
+    select {
+        background: #333;
+    }
+    .article_introduction {
+        color: #AAA;
+    }
+    .articleCard-content {
+        background: #111;
+    }
+    .article_title {
+        color: #DDD;
+    }
+    i {
+        color: #333;
+    }
+    header{
+        opacity: 0.8;
+    }
+    img {
+        opacity: 0.8;
+    }
+    code {
+        background-color: #333;
+    }
+    .side-catalog .catalog-body .active {
+        background-color: #111;
+    }
+    blockquote {
+        border-left: 5px solid #444;
+    }
+    .navbar-custom.invert .navbar-brand .navbar-custom.invert .nav li a {
+        color: #CCC;
+    }
+    @media only screen and (max-width: 767px){
+        .navbar-default .navbar-collapse {
+            background: #222;
+        }
+    }
+    .navbar-nav>li>a:focus, .navbar-nav>li>a:hover {
+        color: #F5F5F5;
+        background-color: transparent;
+    }
+    .sidebar-container a:hover, .sidebar-container a:active {
+        color: #0085a1!important;
+    }
+}
