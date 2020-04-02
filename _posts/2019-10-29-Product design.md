@@ -15,7 +15,6 @@ tags:
 
 [Laws for UX](https://lawsofux.com/)
 
-
 [For color selection](https://coolors.co/app)
 
 finding nearby parking places, filter according to ..., rank the best three,  similar to uber/ hotel booking
