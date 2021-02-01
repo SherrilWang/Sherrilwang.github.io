@@ -39,6 +39,8 @@ PDE setup for real life patterns
 
 所以其实r-d model模拟动物表皮生成这个事情还没有被完全证实。目前是在鱼类上有实例，所以替代方案都有什么？
 
+> In addition to reaction-diffusion, other mathematicalmodels (Murray, 1989; Maini et al., 1991) have beenproposed to explain biological pattern formation, for examplethe chemotactic model and the neural net model.
+
 ## 需要的论文领域
 讲一下历史，首先要证明reaction-diffusion equation的可行性
 - 已知在鱼身上有，zebrafish常用，目前找到的论文都比较早期，找一下更近的
@@ -59,3 +61,7 @@ PDE setup for real life patterns
 - 动物皮肤pattern生成与皮下组织无关，因此没有prepattern。具体是怎样？不太理解。前几年r-d model一直不太被认可，但是有在fish skin发现对应的pattern。需要注意的是，这篇论文发表于2002年。
 
 - zebrafish的一篇提出，随着stripe的生长，增大空间大小，因为鱼在生长。我有必要这样做吗？
+
+
+## 待办事项
+- 尝试一下zebrafish的parameter
