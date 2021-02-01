@@ -1,9 +1,10 @@
 # Site settings
-title: Let's dream.
-SEOTitle: 找个地儿呆着 | Find a place stay stay
+
+title: Sherril 
+SEOTitle: wxm的博客 | MY Blog
 header-img: img/white dwarf star .jpg
 email: ulimywang@gmail.com
-description: "Long live us!"
+description: Long live us!
 keyword: "NA"
 url: "https://sherrilwang.github.io/"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
