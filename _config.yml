@@ -13,7 +13,7 @@ github_repo: "https://github.com/SherrilWang/sherrilwang.github.io" # you code r
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "Guess what I'm thinking now“
-sidebar-avatar: data:img/Kasan.jpg
+sidebar-avatar: img/Kasan.jpg
 
 # Publish posts or collection documents with a future date.
 future: true
