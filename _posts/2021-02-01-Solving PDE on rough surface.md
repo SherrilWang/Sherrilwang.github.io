@@ -63,5 +63,18 @@ PDE setup for real life patterns
 - zebrafish的一篇提出，随着stripe的生长，增大空间大小，因为鱼在生长。我有必要这样做吗？
 
 
-## 待办事项
-- 尝试一下zebrafish的parameter
+## Diffusion tensor & operator
+
+- Adjugate Diffusion Tensors for Geodesic Tractography in WhiteMatter
+传统方法：inverse diffusion tensor
+此处方法：adjugate metric
+
+high angular resolution diffusion imaging (HARDI)普遍比 diffusion tensor imaging（DTI）要好，但是DTI还在被应用着。因为HARDI时间用的比较长，而且not available。
+两种对于标准方法的主要modification：
+
+1. "sharpening" 可以制造更好的tractography results，但是弊端是robustness to noise会下降，所使用的parameter是chosen in ad hoc way （？）
+  - $D_{sharp}=D^n$, D是diffusion， $D_{sharp}$是sharpened tensor， n>1. 
+  - “Fiber” tensor：同时，Descoteaux et al. 有不同的sharpening strategy，依赖于diffusion tensor的transformation。（Descoteaux, M., Deriche, R., Lenglet, C.: Diffusion tensor sharpening improveswhite matter tractography. In: SPIE Image Processing: Medical Imaging, pp. 1084–1087. San Diego (2007)）
+2.  “based on conformal rescaling of standard Riemannian metric"
+$g_{Hao}=e^{\alpha}D^{-1}$, 在这里$\alpha$是通过requiring geodesiccurves to follow more closely the diffusion tensor principaleigenvectors得到的。文章中提到的方法和这种方法比较类似。
+（Hao, X.,Whitaker, R.T., Fletcher, P.T.: Adaptive Riemannian metrics for improved geodesic tracking ofwhite matter. In: Székely, G.,Hahn, H.K. (eds.) IPMI 2011. Lecture Notes in Computer Science, vol. 6801, pp. 13–24. Springer, Berlin (2011)）
