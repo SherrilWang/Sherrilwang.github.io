@@ -76,5 +76,7 @@ high angular resolution diffusion imaging (HARDI)普遍比 diffusion tensor imag
   - $D_{sharp}=D^n$, D是diffusion， $D_{sharp}$是sharpened tensor， n>1. 
   - “Fiber” tensor：同时，Descoteaux et al. 有不同的sharpening strategy，依赖于diffusion tensor的transformation。（Descoteaux, M., Deriche, R., Lenglet, C.: Diffusion tensor sharpening improveswhite matter tractography. In: SPIE Image Processing: Medical Imaging, pp. 1084–1087. San Diego (2007)）
 2.  “based on conformal rescaling of standard Riemannian metric"
-$g_{Hao}=e^{\alpha}D^{-1}$, 在这里$\alpha$是通过requiring geodesiccurves to follow more closely the diffusion tensor principaleigenvectors得到的。文章中提到的方法和这种方法比较类似。
+\[g_{Hao}=e^{\alpha}D^{-1}\]
+ 在这里$\alpha$是通过requiring geodesiccurves to follow more closely the diffusion tensor principaleigenvectors得到的。文章中提到的方法和这种方法比较类似。
+
 （Hao, X.,Whitaker, R.T., Fletcher, P.T.: Adaptive Riemannian metrics for improved geodesic tracking ofwhite matter. In: Székely, G.,Hahn, H.K. (eds.) IPMI 2011. Lecture Notes in Computer Science, vol. 6801, pp. 13–24. Springer, Berlin (2011)）
