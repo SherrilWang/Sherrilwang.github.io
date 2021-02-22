@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “Pattern generation on rough surface”
+title: “Pattern generation on rough surface （一）”
 subtitle: Solving PDEs on rough surface
 author: "Sherril"
 header-img: "img/sky.jpeg"
