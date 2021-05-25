@@ -19,7 +19,6 @@ This article is only for the purpose of my own revision. All quotations in this 
 
 Invented by Niklas Luhemann, the slip box method introduces a set of work flow that helps people keep a record of their understanding and thoughts in a structured and permanent way.
 
-
 The method is also called "Zettelkasten", and with the assistance of this method, he achieved significant results.
 
 
@@ -27,7 +26,7 @@ The method is also called "Zettelkasten", and with the assistance of this method
 
 # How to implement
 
-##Index system
+## Index system
 Luhmann himself has two slip boxes, which are bibliographical one and main one. And he did not organize the notes by topics directly, but giving each unique number. 
 
 > “If a new note was relevant or directly referred to an already existing note, such as a comment, correction or addition, he added it directly behind the previous note. If the existing note had the number 22, the new note would become note number 23. If 23 already existed, he named the new note 22a. By alternating numbers and letters, with some slashes and commas in between, he was able to branch out into as many strings of thought as he liked. For example, a note about causality and systems theory carried the number 21/3d7a7 following a note with the number 21/3d7a6.”
