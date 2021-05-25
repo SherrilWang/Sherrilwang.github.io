@@ -103,8 +103,12 @@ Wrong moves🙅
 * Write down everything
 * Only collect ideas related to specific projects
  
+ 
+ 
 **Feedback loop**
 * By writing down, we test our understanding. By writing down things, we remove it from our brain.
+ 
+ 
  
 **Four types of links**
 1. Links that give you overview of a topic
@@ -117,17 +121,23 @@ Wrong moves🙅
 ## Structure Note
 
 > 一个卡片盒笔记系统不应该只有通过笔记卡片和它们的联系由下而上建立的网状笔记，一些层次结构(hierarchical structure)也是非常有用的，卢曼自己也引入了类似的结构。
+
 > 结构化笔记是元笔记(Meta-Note)：它是一个关于其他笔记及其联系的笔记。卢曼的枢纽笔记作为快速通道，可在笔记网络中导航。结构化笔记的作用也是如此。比如，上图是一个关于卡片盒笔记法的结构化笔记。它类似于一个目录(table of contents)，专门列出了所有有关这个主题的笔记。每当我写一个关于卡片盒笔记法的新笔记时，我都会将它的 ID 添加到这个结构化笔记上。
+
 > 总结：关于其他笔记之间关系的笔记称为结构化笔记(Structure Note)。创建结构化笔记能够训练你发现通用知识模式的能力，能够从 卡片盒笔记系统发现结构化的有用信息供你未来使用。
+
 > 摘录来自： https://zettelkasten.de/introduction/zh/#%E7%BB%99%E6%AF%8F%E6%9D%A1%E7%AC%94%E8%AE%B0%E5%88%86%E9%85%8D%E4%B8%80%E4%B8%AA%E5%9B%BA%E5%AE%9A%E5%9C%B0%E5%9D%80
 
 
 # Other unrelated quotes from the book
 
-“We can hold a maximum of seven things in our head at the same time, plus/minus two (Miller 1956).”
- 
-“mere-exposure effect: doing something many times makes us believe we have become good at it – completely independent of our actual performance (Bornstein 1989).”
- 
-“The brain doesn't distinguish between an actual finished task and one that is postponed by taking a note. By writing something down, we literally get it out of our heads.”
- 
-“Not even half of the students managed to finish their papers in the time they thought they would need under the worst possible conditions (Buehler, Griffin and Ross 1994). ”
+> “We can hold a maximum of seven things in our head at the same time, plus/minus two (Miller 1956).”
+>  
+>  
+> “mere-exposure effect: doing something many times makes us believe we have become good at it – completely independent of our actual performance (Bornstein 1989).”
+>  
+>  
+> “The brain doesn't distinguish between an actual finished task and one that is postponed by taking a note. By writing something down, we literally get it out of our heads.”
+>  
+>  
+> “Not even half of the students managed to finish their papers in the time they thought they would need under the worst possible conditions (Buehler, Griffin and Ross 1994). ”
