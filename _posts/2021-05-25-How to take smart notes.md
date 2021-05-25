@@ -104,12 +104,11 @@ Wrong moves🙅
 * Only collect ideas related to specific projects
  
  
- 
+\
 **Feedback loop**
 * By writing down, we test our understanding. By writing down things, we remove it from our brain.
- 
- 
- 
+
+\ 
 **Four types of links**
 1. Links that give you overview of a topic
     * You can collect links to other relevant notes to this topic
