@@ -1,12 +1,12 @@
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {
-    padding-right: 5%;
+    /* padding-right: 5%; */
   }
 }
 @media (min-width: 768px) {
   .post-container {
-    padding-right: 5%;
+    /* padding-right: 5%; */
   }
 }
 .sidebar-container {
@@ -57,10 +57,11 @@
   height: 100%;
   padding-bottom: 40px;
   width: 195px;
+  margin-left: 90px;
 }
 .side-catalog.fixed {
   position: fixed;
-  top: -21px;
+  top: 56px; /* change from -21px*/
 }
 .side-catalog.fold .catalog-toggle::before {
   content: "+";
@@ -70,6 +71,7 @@
 }
 .side-catalog .catalog-toggle::before {
   content: "−";
+  color: #ccc;
   position: relative;
   margin-right: 5px;
   bottom: 1px;
@@ -100,21 +102,28 @@
   text-overflow: ellipsis;
 }
 .side-catalog .catalog-body .h1_nav,
-.side-catalog .catalog-body .h2_nav,
-.side-catalog .catalog-body .h3_nav {
+.side-catalog .catalog-body .h2_nav {
   margin-left: 0;
   font-size: 13px;
   font-weight: bold;
 }
-.side-catalog .catalog-body .h4_nav,
-.side-catalog .catalog-body .h5_nav,
-.side-catalog .catalog-body .h6_nav {
-  margin-left: 10px;
+.side-catalog .catalog-body .h3_nav {
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.side-catalog .catalog-body .h4_nav {
+  margin-left: 12px;
   font-size: 12px;
 }
-.side-catalog .catalog-body .h4_nav a,
-.side-catalog .catalog-body .h5_nav a,
-.side-catalog .catalog-body .h6_nav a {
+.side-catalog .catalog-body .h4_nav a {
+  max-width: 170px;
+}
+.side-catalog .catalog-body .h5_nav .h6_nav {
+  margin-left: 18px;
+  font-size: 12px;
+}
+.side-catalog .catalog-body .h5_nav .h6_nav a {
   max-width: 170px;
 }
 .side-catalog .catalog-body .active {
@@ -122,13 +131,14 @@
   background-color: #F5F5F5;
 }
 .side-catalog .catalog-body .active a {
-  color: #0085a1!important;
+  color: #0085a1 !important;
 }
 @media (max-width: 1200px) {
   .side-catalog {
     display: none;
   }
 }
+
 /*
   Please note this CSS is currently in prototype form. We'll implement a cleaned up version in Web Starter Kit.
 */
@@ -150,6 +160,7 @@
   padding: 18px 24px;
   bottom: 0px;
   opacity: 0;
+  border-radius: 2px;
 }
 @media (min-width: 640px) {
   .paper-snackbar {
@@ -318,7 +329,11 @@ pre.highlight {
   color: #960050;
   background-color: #1e0010;
 }
-.highlight .k {
+.language-coq .highlight .err {
+  background-color: transparent;
+}
+.highlight .k,
+.language-coq .highlight .err {
   color: #c678dd;
 }
 .highlight .l {
@@ -513,6 +528,10 @@ pre.highlight {
   padding: 0;
   word-wrap: normal;
 }
+.highlighter-rouge .highlight .rouge-table .rouge-gutter,
+.highlighter-rouge .highlight .rouge-table .rouge-code {
+  border: 0 !important;
+}
 .highlighter-rouge .highlight .rouge-code pre {
   color: #abb2bf;
 }
@@ -547,17 +566,133 @@ pre.highlight {
     border-radius: 0px;
   }
   .highlighter-rouge .highlight td.rouge-gutter {
-    width: 46px;
+    width: 36px;
+  }
+  .highlighter-rouge .highlight table > tbody > tr > td > pre {
+    padding: 14px 10px;
   }
 }
-body {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-  line-height: 1.7;
+.search-page {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: #fafafa;
+  -webkit-transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1);
+  transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1);
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+.search-page.search-active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0) scale(1, 1);
+  -ms-transform: translate(0, 0) scale(1, 1);
+  transform: translate(0, 0) scale(1, 1);
+}
+.search-page.search-active .search-main {
+  opacity: 1;
+}
+.search-page .search-main {
+  padding-top: 80px;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
+  transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1) 250ms;
+}
+.search-page .search-main .row,
+.search-page .search-main .row > div {
+  height: 100%;
+}
+.search-page .search-icon-close-container {
+  position: absolute;
+  z-index: 1;
+  padding: 16px;
+  top: 0;
+  right: 2px;
+}
+.search-page .search-icon-close-container i {
+  font-size: 20px;
+  color: black;
+}
+.search-page #search-input {
+  font-family: "Fira Code", Menlo, Monaco, Consolas, "Courier New", monospace;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  color: #404040;
+  background: rgba(0,0,0,0);
+}
+@media only screen and (min-width: 768px) {
+  .search-page #search-input {
+    margin-left: 20px;
+  }
+}
+.search-page #search-results {
+  overflow: auto;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 80px;
+}
+.search-icon a,
+.search-icon-close {
+  cursor: pointer;
+  font-size: 30px;
+  color: #311e3e;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+.search-icon a:hover,
+.search-icon-close:hover {
+  opacity: 0.8;
+}
+.search-icon,
+.search-icon-close {
   font-size: 16px;
+}
+
+
+@media(prefers-color-scheme: dark){
+  .search-page {
+    background-color: rgba(37,37,37,0.6);
+  }
+  .search-page .search-icon-close-container i {
+    color: #fafafa;
+  }
+  .search-page #search-input {
+    color: #fafafa;
+  }
+}
+
+@supports ( -webkit-backdrop-filter: none) or ( backdrop-filter: none){
+  .search-page {
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+      background-color: rgba(255,255,255,0.6);
+  }
+  /* Dark Mode */
+  @media(prefers-color-scheme: dark){
+    .search-page {
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+      background-color: rgba(37,37,37,0.6);
+    }
+  }
+}
+/* Dylan 新增结束 */
+
+body {
+  /* Dylan Changed to Serif. 严格来讲 Alegreya 是 Sans 但我就是喜欢这个字体*/
+  font-family: -apple-system, BlinkMacSystemFont, 'Alegreya Sans', "Helvetica Neue", "Arial", 'Segoe UI', "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", sans-serif;
+  line-height: 1.65;
+  font-size: 1.85em;
   color: #404040;
   overflow-x: hidden;
   text-rendering: auto;
@@ -568,21 +703,24 @@ body {
 p {
   margin: 30px 0;
 }
+@media screen and (max-width: 768px) {
+  p {
+    margin: 25px 0;
+  }
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+   /* Dylan Changed to Serif. 严格来讲 Alegreya 是 Sans 但我就是喜欢这个字体*/
+  font-family: -apple-system, BlinkMacSystemFont, 'Alegreya Sans', "Helvetica Neue", "Arial", 'Segoe UI', "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.7;
   line-height: 1.1;
   font-weight: bold;
 }
+
 h4 {
   font-size: 21px;
 }
@@ -632,11 +770,19 @@ select.sel-lang {
   min-height: 28px;
   font-size: 14px;
 }
+table {
+  margin-top: 10px;
+}
 table.table > tbody th,
 table.table > thead th,
 table.table > tbody td,
 table.table > thead td {
-  border: 1px solid #eee;
+  border: 1px solid #eee !important;
+}
+@media screen and (max-width: 767px) {
+  .table-responsive {
+    border: 0;
+  }
 }
 hr.small {
   max-width: 100px;
@@ -676,37 +822,58 @@ samp {
 .post-container h4,
 .post-container h5,
 .post-container h6 {
-  margin: 30px 0 10px;
+  margin: 50px 0 20px;
   line-height: 1.4;
 }
-.post-container h5 {
-  font-size: 19px;
-  font-weight: 600;
-  color: gray;
-}
-.post-container h5 + p {
-  margin-top: 5px;
-}
-.post-container h6 {
-  font-size: 16px;
-  font-weight: 600;
-  color: gray;
-}
+.post-container h1 + p,
+.post-container h2 + p,
+.post-container h3 + p,
+.post-container h4 + p,
+.post-container h5 + p,
 .post-container h6 + p {
-  margin-top: 5px;
+  margin-top: 20px;
+}
+.post-container h2::before {
+  content: " ";
+  display: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.post-container h4 {
+  font-size: 22px;
+  font-weight: 600;
+  color: gray;
+}
+.post-container h4 + p {
+  margin-top: 10px;
+}
+.post-container h5,
+.post-container h6 {
+  font-size: 20px;
+  font-weight: 600;
+  color: gray;
+}
+.post-container h5 + p,
+.post-container h6 + p {
+  margin-top: 10px;
 }
 @media screen and (max-width: 768px) {
   .post-container h1 {
     font-size: 30px;
   }
   .post-container h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
   .post-container h3 {
-    font-size: 21px;
+    font-size: 20px;
   }
   .post-container h4 {
     font-size: 19px;
+  }
+  .post-container h5,
+  .post-container h6 {
+    font-size: 18px;
   }
 }
 .post-container ul,
@@ -763,14 +930,14 @@ samp {
 }
 .post-container .anchorjs-link {
   position: absolute;
-  padding-top: 1px;
+  text-decoration: none !important;
 }
 @media only screen and (max-width: 767px) {
   /**
-	 * Layout
-	 * Since V1.6 we use absolute positioning to prevent to expand container-fluid
-	 * which would cover tags. A absolute positioning make a new layer.
-	 */
+   * Layout
+   * Since V1.6 we use absolute positioning to prevent to expand container-fluid
+   * which would cover tags. A absolute positioning make a new layer.
+   */
   .navbar-default .navbar-collapse {
     position: absolute;
     right: 0;
@@ -782,13 +949,13 @@ samp {
     width: 170px;
   }
   /**
-	 * Animation
-	 * HuxBlog-Navbar using genuine Material Design Animation
-	 */
+   * Animation
+   * HuxBlog-Navbar using genuine Material Design Animation
+   */
   #huxblog_navbar {
     /**
-		 * Sharable code and 'out' function
-		 */
+     * Sharable code and 'out' function
+     */
     opacity: 0;
     transform: scaleX(0);
     transform-origin: top right;
@@ -797,8 +964,8 @@ samp {
     -webkit-transform-origin: top right;
     -webkit-transition: all 200ms cubic-bezier(0.47, 0, 0.4, 0.99) 0ms;
     /**
-		 *'In' Animation
-		 */
+     *'In' Animation
+     */
   }
   #huxblog_navbar a {
     font-size: 13px;
@@ -845,11 +1012,7 @@ samp {
   left: 0;
   width: 100%;
   z-index: 3;
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Alegreya Sans', "Helvetica Neue", "Arial", 'Segoe UI', "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.7;
 }
 .navbar-custom .navbar-brand {
@@ -944,7 +1107,7 @@ samp {
     -moz-transition: -moz-transform 0.3s;
     transition: transform 0.3s;
   }
-    
+
   .navbar-custom.is-fixed .navbar-brand {
     color: #404040;
   }
@@ -973,47 +1136,47 @@ samp {
 /* Dylan 新增 */
 /* 若浏览器支持 backdrop-filter，则不透明度为 60%，并启用高斯模糊 */
 @supports ( -webkit-backdrop-filter: none) or ( backdrop-filter: none){
-    .navbar-custom.is-fixed {
-        -webkit-backdrop-filter: saturate(180%) blur(20px);
-        backdrop-filter: saturate(180%) blur(20px);
-        background-color: rgba(255,255,255,0.6);
-        position: fixed;
-        top: -61px;
-        border-bottom: 1px solid rgba(51,51,51,.1);
-        -webkit-transition: -webkit-transform 0.3s;
-        -moz-transition: -moz-transform 0.3s;
-        transition: transform 0.3s;
-    }
-    .navbar-custom.is-fixed .navbar-brand {
-        color: #333;
-    }
-    .navbar-custom.is-fixed .nav li a {
-        color: #333;
-    }
-    
-    /* Dark Mode */
-    @media(prefers-color-scheme: dark){
-        .navbar-custom.is-fixed .nav li a {
-            color: #F8F8F8;
-        } /* 暗色模式 */
-        .navbar-custom.is-fixed .navbar-brand {
-            color: #F8F8F8;
-        }
-        .navbar-custom.is-fixed {
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            backdrop-filter: saturate(180%) blur(20px);
-            background-color: rgba(37, 37, 37, 0.6);
-            position: fixed;
-            top: -61px;
-            border-bottom: 1px solid rgba(217, 217, 217, 0.3);
-            -webkit-transition: -webkit-transform 0.3s;
-            -moz-transition: -moz-transform 0.3s;
-            transition: transform 0.3s;
-        }
-    }
-    
+  .navbar-custom.is-fixed {
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+      background-color: rgba(255,255,255,0.6);
+      position: fixed;
+      top: -61px;
+      border-bottom: 1px solid rgba(51,51,51,.1);
+      -webkit-transition: -webkit-transform 0.3s;
+      -moz-transition: -moz-transform 0.3s;
+      transition: transform 0.3s;
+  }
+  .navbar-custom.is-fixed .navbar-brand {
+      color: #333;
+  }
+  .navbar-custom.is-fixed .nav li a {
+      color: #333;
+  }
+
+  /* Dark Mode */
+  @media(prefers-color-scheme: dark){
+      .navbar-custom.is-fixed .nav li a {
+          color: #F8F8F8;
+      } /* 暗色模式 */
+      .navbar-custom.is-fixed .navbar-brand {
+          color: #F8F8F8;
+      }
+      .navbar-custom.is-fixed {
+          -webkit-backdrop-filter: saturate(180%) blur(20px);
+          backdrop-filter: saturate(180%) blur(20px);
+          background-color: rgba(37, 37, 37, 0.6);
+          position: fixed;
+          top: -61px;
+          border-bottom: 1px solid rgba(217, 217, 217, 0.3);
+          -webkit-transition: -webkit-transform 0.3s;
+          -moz-transition: -moz-transform 0.3s;
+          transition: transform 0.3s;
+      }
+  }
+
 }
-/* Dylan 新增结束 */ 
+/* Dylan 新增结束 */
 
 
 .intro-header {
@@ -1068,7 +1231,7 @@ samp {
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 150px 0;
+    padding: 160px 0;
   }
 }
 .intro-header .site-heading {
@@ -1076,7 +1239,7 @@ samp {
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading {
-    padding: 150px 0;
+    padding: 160px 0;
   }
 }
 .intro-header .site-heading,
@@ -1090,11 +1253,7 @@ samp {
 }
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Alegreya Sans', "Helvetica Neue", "Arial", 'Segoe UI', "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.7;
   font-size: 18px;
   line-height: 1.1;
@@ -1118,11 +1277,7 @@ samp {
   display: block;
 }
 .intro-header .post-heading .subheading {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Alegreya Sans', "Helvetica Neue", "Arial", 'Segoe UI', "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.7;
   font-size: 17px;
   line-height: 1.4;
@@ -1193,9 +1348,9 @@ samp {
 .post-preview > .post-meta {
   font-family: 'Lora', 'Times New Roman', serif;
   color: #cccccc;
-  font-size: 16px;
+  font-size: 0.9em;
   font-style: italic;
-  margin-top: 0;
+  margin-top: 6px;
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
@@ -1216,11 +1371,11 @@ samp {
     font-size: 16px;
   }
   .post-preview .post-meta {
-    font-size: 18px;
+    font-size: 0.9em;
   }
 }
 .post-content-preview {
-  font-size: 13px;
+  font-size: 0.85em;
   font-style: italic;
   color: #a3a3a3;
 }
@@ -1229,7 +1384,7 @@ samp {
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
-    font-size: 14px;
+    font-size: 0.8em;
   }
 }
 .section-heading {
@@ -1267,62 +1422,8 @@ footer .copyright a:hover,
 footer .copyright a:focus {
   color: #0085a1;
 }
-.floating-label-form-group {
-  font-size: 14px;
-  position: relative;
-  margin-bottom: 0;
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid #eeeeee;
-}
-.floating-label-form-group input,
-.floating-label-form-group textarea {
-  z-index: 1;
-  position: relative;
-  padding-right: 0;
-  padding-left: 0;
-  border: none;
-  border-radius: 0;
-  font-size: 1.5em;
-  background: none;
-  box-shadow: none !important;
-  resize: none;
-}
-.floating-label-form-group label {
-  display: block;
-  z-index: 0;
-  position: relative;
-  top: 2em;
-  margin: 0;
-  font-size: 0.85em;
-  line-height: 1.764705882em;
-  vertical-align: middle;
-  vertical-align: baseline;
-  opacity: 0;
-  -webkit-transition: top 0.3s ease, opacity 0.3s ease;
-  -moz-transition: top 0.3s ease, opacity 0.3s ease;
-  -ms-transition: top 0.3s ease, opacity 0.3s ease;
-  transition: top 0.3s ease, opacity 0.3s ease;
-}
-.floating-label-form-group::not(:first-child) {
-  padding-left: 14px;
-  border-left: 1px solid #eeeeee;
-}
-.floating-label-form-group-with-value label {
-  top: 0;
-  opacity: 1;
-}
-.floating-label-form-group-with-focus label {
-  color: #0085a1;
-}
-form .row:first-child .floating-label-form-group {
-  border-top: 1px solid #eeeeee;
-}
 .btn {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Alegreya Sans', "Helvetica Neue", "Arial", 'Segoe UI', "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
   font-size: 14px;
@@ -1347,11 +1448,7 @@ form .row:first-child .floating-label-form-group {
 }
 .pager li > a,
 .pager li > span {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Alegreya Sans', "Helvetica Neue", "Arial", 'Segoe UI', "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.7;
   text-transform: uppercase;
   font-size: 13px;
@@ -1490,7 +1587,7 @@ img::-moz-selection {
 #tag_cloud a.tag-button--all,
 #tag_cloud .tag.tag-button--all {
   font-weight: 700;
-  color: #0085a1!important;
+  color: #0085a1 !important;
 }
 #tag_cloud a.tag-button--all:hover,
 #tag_cloud .tag.tag-button--all:hover,
@@ -1534,11 +1631,7 @@ img::-moz-selection {
 }
 .mini-post-list .tag-text {
   font-weight: 200;
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Alegreya Sans', "Helvetica Neue", "Arial", 'Segoe UI', "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.7;
 }
 .mini-post-list .post-preview {
@@ -1582,6 +1675,8 @@ img::-moz-selection {
   max-width: 100%;
   height: auto;
   margin: 1.5em auto 1.6em auto;
+  position: relative;
+  left: -10%;
 }
 /* Hux Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
@@ -1607,46 +1702,6 @@ img::-moz-selection {
 }
 .navbar-default .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 3px;
-}
-/* Hux customize Style for Duoshuo */
-.comment {
-  margin-top: 20px;
-}
-.comment #ds-thread #ds-reset a.ds-like-thread-button {
-  border: 1px solid #ddd;
-  border-radius: 0px;
-  background: white;
-  box-shadow: none;
-  text-shadow: none;
-}
-.comment #ds-thread #ds-reset li.ds-tab a.ds-current {
-  border: 1px solid #ddd;
-  border-radius: 0px;
-  background: white;
-  box-shadow: none;
-  text-shadow: none;
-}
-.comment #ds-thread #ds-reset .ds-textarea-wrapper {
-  background: none;
-}
-.comment #ds-thread #ds-reset .ds-gradient-bg {
-  background: none;
-}
-.comment #ds-thread #ds-reset .ds-post-options {
-  border-bottom: 1px solid #ccc;
-}
-.comment #ds-thread #ds-reset .ds-post-button {
-  border-bottom: 1px solid #ccc;
-}
-.comment #ds-thread #ds-reset .ds-post-button {
-  background: white;
-  box-shadow: none;
-}
-.comment #ds-thread #ds-reset .ds-post-button:hover {
-  background: #eeeeee;
-}
-#ds-smilies-tooltip ul.ds-smilies-tabs li a {
-  background: white !important;
 }
 .page-fullscreen .intro-header {
   position: fixed;
@@ -1696,108 +1751,629 @@ img::-moz-selection {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
+.no-scroll {
+  overflow-y: hidden;
+}
 
+bubble {
+  padding:20px;
+  justify-self: center;
+  align-self: center;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+/*  width: 450px;*/
+}
 
-/*Dark Mode*/
-/*@media(prefers-color-scheme: dark){
-    .gt-container .gt-header-textarea {
-        border: 1px solid rgba(255,255,255,0.2);
-        background-color: #111;
-    }
-    .gt-container .gt-meta {
-        border-bottom: 1px solid #333;
-    }
-    .gt-container .gt-btn-preview {
-        background-color: #222;
-    }
-    .gt-container .gt-comment-admin .gt-comment-content {
-        background-color: #111;
-    }
-    .gt-container .gt-comment-body {
-        color: #CCC !important;
-    }
-    .gt-container .gt-comment-content:hover {
-        -webkit-box-shadow: 0 0.625em 3.75em 0 #000;
-        box-shadow: 0 0.625em 3.75em 0 #000;
-    }
-}*/
+bubble p {
+  font-size: 0.95em;
+  line-height: 1.4;
+  margin: 1px 0;
+  padding: 8px 17px 6px 13px;
+  max-width: 380px;
+  position: relative;
+  border-radius: 18px;
+}
 
-@media(prefers-color-scheme: dark){
-    body{
-        color: #CCC;
-        background-color: #222;
-    }
-    hr{
-        border-top: 1.5px solid #333;
-    }
-    .h1, h1 {
-        color: #CCC;
-    }
-    .h2, h2 {
-        color: #CCC;
-    }
-    .h3, h3 {
-        color: #777;
-    }
-    .pager li>a {
-        color: #777;
-    }
-    .pager li>a, .pager li>span {
-        background-color: #111;
-        border: 1px solid #333;
-    }
-    .sidebar-container .tags a {
-        border-color: #444;
-    }    
-    .tags a:hover, .tags .tag:hover, .tags a:active, .tags .tag:active {
-        background-color: rgba(0,0,0,.6);
-    }
-    select {
-        background: #333;
-    }
-    .article_introduction {
-        color: #AAA;
-    }
-    .articleCard-content {
-        background: #111;
-    }
-    .article_title {
-        color: #DDD;
-    }
-    i {
-        color: #333;
-    }
-    header{
-        opacity: 0.8;
-    }
-    img {
-        opacity: 0.8;
-    }
-    code {
-        background-color: #333;
-    }
-    .side-catalog .catalog-body .active {
-        background-color: #111;
-    }
-    blockquote {
-        border-left: 5px solid #444;
-    }
-    .navbar-custom.invert .navbar-brand .navbar-custom.invert .nav li a {
-        color: #CCC;
-    }
-    @media only screen and (max-width: 767px){
-        .navbar-default .navbar-collapse {
-            background: #222;
-        }
-    }
-    .navbar-nav>li>a:focus, .navbar-nav>li>a:hover {
-        color: #F5F5F5;
-        background-color: transparent;
-    }
-    .sidebar-container a:hover, .sidebar-container a:active {
-        color: #0085a1!important;
-    }
+bubble p:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+bubble p.from-me {
+  color: white;
+  align-self: flex-end;
+  background-color: #1084ff;
+}
+
+bubble p.last {
+  margin-bottom: 10px;
+  }
+
+bubble p.from-me.last:after {
+  
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='15.515px' height='17.5px' viewBox='32.485 17.5 15.515 17.5' enable-background='new 32.485 17.5 15.515 17.5'><path fill='#1084FF' d='M48,35c-7-4-6-8.75-6-17.5C28,17.5,29,35,48,35z'/></svg>") right bottom no-repeat;
+  right: -6px;
+}
+
+bubble p.to-me {
+  color: black;
+  align-self: flex-start;
+  background-color: #E5E5EA;
+}
+
+bubble p.to-me.last:after {
+  background: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='15.515px' height='17.5px' viewBox='32.484 17.5 15.515 17.5' enable-background='new 32.484 17.5 15.515 17.5'><path fill='#E5E5EA' d='M38.484,17.5c0,8.75,1,13.5-6,17.5C51.484,35,52.484,17.5,38.484,17.5z'/></svg>") left bottom no-repeat;
+  left: -6px;
+}
+
+/**article card**/
+
+.articleCard {
+  position: relative;
+  display: block;
+  margin: 1em auto;
+  width: 80%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.article_title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 40px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #333;
+  margin: 4px;
+}
+
+.articlecard-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.25;
+  color: #666;
+  text-align: left;
+}
+
+.articleCard-imageCell {
+  margin-left: 8px;
+  border-radius: 6px;
+}
+
+.articleCard-content {
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.articleCard-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 18px;
+  border-radius: 13px;
+  background: #EEE;
+}
+
+.article_introduction {
+  display: block;
+  font-size: 14px;
+  color: #000;
+  text-align:left;
+  margin: 4px;
+}
+
+.a_br{
+  display: inline;
+}
+
+p1 {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  word-wrap: break-word;
+  text-align:left;
+}
+
+.articleCard-imageCell .articleCard-image {
+display: block;
+width: 120px;
+height: 120px;
+max-width: none;
+border-radius: inherit;
+margin: 0;
+left: 0;
+}
+
+@media screen and (max-width: 480px) {
+
+.articleCard-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: inherit;
+  background: #EEE;
+}
+  .articleCard-imageCell {
+      display: none;
+}
+
+  .a_br{
+  display: none;
+}   
+  .articleCard-image {
+  display: none;
+}
+  .articleCard {
+  position: relative;
+  display: block;
+  margin: 1em auto;
+  width: 95%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+  .article_introduction {
+  display: block;
+  font-size: 12px;
+  color: #000;
+  text-align:left;
+  margin: 4px;
+}
+  .article_title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #000;
+  margin: 4px;
+}
+
+.articlecard-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 8px;
+  line-height: 1.25;
+  color: #666;
+  text-align: left;
+}
+  h1 {
+  margin: 24px 0;
+  font-size: 25px;
+}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){  
+.articleCard-content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: inherit;
+  background: #EEE;
+}
+  .articleCard-imageCell {
+      display: none;
+}
+  .a_br{
+  display: none;
+}   
+  
+   .articleCard {
+  position: relative;
+  display: block;
+  margin: 1em auto;
+  width: 85%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  max-width: 100%;
+  overflow: hidden;
+}
+.articleCard-imageCell .articleCard-image {
+display: block;
+width: 70px;
+height: 70px;
+border-radius: inherit;
+margin: 0;
+left: 0;
+}
+  .article_introduction {
+  display: block;
+  font-size: 12px;
+  color: #000;
+  text-align:left;
+  margin: 4px;
+}
+  .article_title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #333;
+  margin: 4px;
+}
+
+.articlecard-meta {
+  display: block;
+  font-size: 9px;
+  line-height: 1.25;
+  color: #666;
+  text-align: left;
+}
+  h1 {
+  margin: 24px 0;
+  font-size: 30px;
+}
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1280px){      
+   .articleCard {
+  position: relative;
+  display: block;
+  margin: 1em auto;
+  width: 80%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  max-width: 100%;
+  overflow: hidden;
+}
 }
 
 
+/* YouTube Video Auto adjust*/
 
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 30px;
+height: 0;
+overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+video{
+  border-radius: 8px; 
+  position: relative;
+  left: -10%;
+  width: 100%;
+}
+/*Dark Mode*/
+/*@media(prefers-color-scheme: dark){
+  .gt-container .gt-header-textarea {
+      border: 1px solid rgba(255,255,255,0.2);
+      background-color: #111;
+  }
+  .gt-container .gt-meta {
+      border-bottom: 1px solid #333;
+  }
+  .gt-container .gt-btn-preview {
+      background-color: #222;
+  }
+  .gt-container .gt-comment-admin .gt-comment-content {
+      background-color: #111;
+  }
+  .gt-container .gt-comment-body {
+      color: #CCC !important;
+  }
+  .gt-container .gt-comment-content:hover {
+      -webkit-box-shadow: 0 0.625em 3.75em 0 #000;
+      box-shadow: 0 0.625em 3.75em 0 #000;
+  }
+}*/
+
+@media(prefers-color-scheme: dark){
+  body{
+      color: #CCC;
+      background-color: #222;
+  }
+  hr{
+      border-top: 1.5px solid rgba(255,255,255, 0.1)
+  }
+  .h1, h1 {
+      color: #FAFAFA;
+  }
+  .h2, h2 {
+      color: #CCC;
+  }
+  .h3, h3 {
+      color: #777;
+  }
+  .meta {
+    color: #CCCCCC;
+  }
+  .pager li>a {
+      color: #777;
+  }
+  .pager li>a, .pager li>span {
+      background-color: #111;
+      border: 1px solid #333;
+      /* border-radius: 2px; */
+  }
+  .sidebar-container .tags a {
+      border-color: #444;
+  }
+  .tags a:hover, .tags .tag:hover, .tags a:active, .tags .tag:active {
+      background-color: rgba(0,0,0,.6);
+  }
+  select {
+      background: #333;
+  }
+  .article_introduction {
+      color: #AAA;
+  }
+  .articleCard-content {
+      background: #111;
+  }
+  .article_title {
+      color: #DDD;
+  }
+  i {
+      color: #333;
+  }
+  .search-icon i {
+    color: #fafafa;
+    }
+  /*header{
+      opacity: 0.8;
+  }*/
+  /* img {
+      opacity: 0.8;
+  } */
+  code {
+      background-color: #333;
+  }
+  .side-catalog .catalog-body .active {
+      background-color: #111;
+  }
+  blockquote {
+      border-left: 5px solid #444;
+  }
+  .nav li a {
+    color: #CCCCCC;
+  }
+  .navbar-custom.invert .navbar-brand .navbar-custom.invert .nav li a {
+      color: #CCCCCC;
+  }
+  @media only screen and (max-width: 767px){
+      .navbar-default .navbar-collapse {
+          background: #222;
+      }
+  }
+  .navbar-nav>li>a:hover {
+      color: #337ab7;
+      background-color: transparent;
+  }
+  .navbar-nav>li>a:focus {
+      color: #F5F5F5;
+      background-color: transparent;
+  }
+  .sidebar-container a:hover, .sidebar-container a:active {
+      color: #0085a1!important;
+  }
+}
+
+/*Dark Mode - END*/
+
+.rating{
+  float: right;
+  color: #FFCC00;
+  text-align: right;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+p.info_green {
+padding: 0.5rem 1rem;
+background-color: rgba(82, 196, 26, 0.1);
+border: 1px solid #4CD964;
+border-radius: 0.4rem;
+}
+
+p.info_blue {
+padding: 0.5rem 1rem;
+background-color: rgba(26, 122, 196, 0.1);
+border: 1px solid #007AFF;
+border-radius: 0.4rem;
+}
+
+p.info_red {
+padding: 0.5rem 1rem;
+background-color: rgba(196, 26, 26, 0.1);
+border: 1px solid #FF2D55;
+border-radius: 0.4rem;
+}
+
+p.info_grey {
+padding: 0.5rem 1rem;
+background-color: rgba(63, 63, 63, 0.1);
+border: 1px solid #8F8E94;
+border-radius: 0.4rem;
+}
+
+p.info_yellow {
+padding: 0.5rem 1rem;
+background-color: rgba(196, 162, 26, 0.1);
+border: 1px solid #FFCC00;
+border-radius: 0.4rem;
+}
+
+/* New checkbox */
+
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='checkbox']{
+    --active: #5628EE;
+    /* --active-inner: #fff; */
+    --active-inner: #333;
+    --input-border: #CDD9ED;
+    --input-border-hover: #23C4F8;
+    --background: #fff;
+    /* --disabled: rgba(0, 42, 104, 0.2); */
+    /* --disabled-inner: rgba(0, 42, 104, 0.2); */
+    /* --shadow-inner: #0086a14f; */
+    height: 21px;
+    outline: none;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    cursor: pointer;
+    height: 21px;
+    border: 1px solid var(--input-border);
+    background: var(--background);
+    transition: background .3s ease, border-color .3s ease;
+  }
+  @media(prefers-color-scheme: dark){
+    input[type='checkbox']{
+      --active-inner: #fff;
+    }
+  }
+
+  input[type='checkbox']:after{
+    content: '';
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: opacity .2s ease, -webkit-transform .3s ease, -webkit-filter .3s ease;
+    transition: transform .3s ease, opacity .2s ease, filter .3s ease;
+    transition: transform .3s ease, opacity .2s ease, filter .3s ease, -webkit-transform .3s ease, -webkit-filter .3s ease;
+  }
+  input[type='checkbox']:checked{
+    background: var(--active);
+    border-color: var(--active);
+  }
+  input[type='checkbox']:checked:after{
+    -webkit-filter: drop-shadow(0 1px 2px var(--shadow-inner));
+            filter: drop-shadow(0 1px 2px var(--shadow-inner));
+    transition: opacity 0.3s ease, -webkit-filter 0.3s ease, -webkit-transform 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2);
+    transition: opacity 0.3s ease, filter 0.3s ease, transform 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2);
+    transition: opacity 0.3s ease, filter 0.3s ease, transform 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2), -webkit-filter 0.3s ease, -webkit-transform 0.6s cubic-bezier(0.175, 0.88, 0.32, 1.2);
+  }
+  input[type='checkbox']:disabled{
+    cursor: not-allowed;
+    opacity: 1;
+    background: var(--disabled);
+  }
+  input[type='checkbox']:disabled:checked{
+    background: var(--disabled-inner);
+    border-color: var(--input-border);
+  }
+  input[type='checkbox']:hover:not(:checked):not(:disabled){
+    border-color: var(--input-border-hover);
+  }
+  input[type='checkbox']:not(.switch){
+    width: 21px;
+    height: 21px;
+    margin-right: 6px;
+    margin-left: -6px;
+    bottom: -5px;
+  }
+  input[type='checkbox']:not(.switch):after{
+    opacity: 0;
+  }
+  input[type='checkbox']:not(.switch):checked:after{
+    opacity: 1;
+  }
+
+  input[type='checkbox']:not(.switch) {
+    border-radius: 6px;
+  }
+  input[type='checkbox']:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+    top: 4px;
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  input[type='checkbox']:not(.switch):checked:after {
+    -webkit-transform: rotate(43deg);
+            transform: rotate(43deg);
+  }
+  input[type='checkbox'].switch {
+    width: 38px;
+    border-radius: 11px;
+  }
+  input[type='checkbox'].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--input-border);
+  }
+  input[type='checkbox'].switch:checked:after {
+    background: var(--active-inner);
+    -webkit-transform: translateX(17px);
+            transform: translateX(17px);
+  }
+  input[type='checkbox'].switch:disabled:not(:checked):after {
+    opacity: .6;
+  }
+}
+
+.side-catalog hr{
+  border-top: 1.5px solid rgba(0, 0, 0, 0);
+}
+
+/* Dylan 新增结束 */
