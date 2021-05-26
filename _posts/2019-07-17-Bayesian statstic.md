@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “对于Bayesian Statistics的初步认识"
+title: "对于Bayesian Statistics的初步认识"
 subtitle: '和Frequentist stat的比较/主要方法和思路/未完'
 author: "Sherril"
 header-img: "img/google-earth-view-5553.jpg"

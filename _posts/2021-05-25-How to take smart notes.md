@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “Luhmann's Slip Box Method of Note-Taking"
+title: "Luhmann's Slip Box Method of Note-Taking"
 subtitle: ''
 author: "Sherril"
 header-img: "img/sky.jpeg"

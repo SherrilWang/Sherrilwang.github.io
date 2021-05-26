@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “关于Undertale"
+title: "关于Undertale"
 subtitle: 'because you are full of determination'
 author: "Sherril"
 header-img: "img/La Tête En Friche.jpg"
