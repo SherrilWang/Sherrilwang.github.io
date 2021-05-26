@@ -15,6 +15,7 @@ tags:
 This article is only for my own revision. All quotations in this article, if not specially stated, are from Sönke Ahrens's book, *How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers*.
 
 Table of Contents
+[toc]
 
 
 # Background
