@@ -1676,7 +1676,7 @@ img::-moz-selection {
   height: auto;
   margin: 1.5em auto 1.6em auto;
   position: relative;
-  left: -10%;
+  left: 0%;
 }
 /* Hux Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
@@ -2089,7 +2089,7 @@ overflow: hidden;
 video{
   border-radius: 8px; 
   position: relative;
-  left: -10%;
+  left: 0%;
   width: 100%;
 }
 /*Dark Mode*/
