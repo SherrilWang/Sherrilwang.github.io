@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “一些关于Information technology的整理”
+title: "一些关于Information technology的整理"
 subtitle: 
 
 author: "Sherril"

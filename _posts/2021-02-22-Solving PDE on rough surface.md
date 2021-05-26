@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “Pattern generation on rough surface （二）”
+title: "Pattern generation on rough surface （二）"
 subtitle: 关于parameter的调整：M，f, D｜和leevan的探讨
 
 author: "Sherril"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: “Pattern generation on rough surface （一）”
+title: "Pattern generation on rough surface （一）"
 subtitle: Solving PDEs on rough surface
 author: "Sherril"
 header-img: "img/sky.jpeg"
@@ -39,7 +39,10 @@ PDE setup for real life patterns
 
 所以其实r-d model模拟动物表皮生成这个事情还没有被完全证实。目前是在鱼类上有实例，所以替代方案都有什么？
 
-> In addition to reaction-diffusion, other mathematicalmodels (Murray, 1989; Maini et al., 1991) have beenproposed to explain biological pattern formation, for examplethe chemotactic model and the neural net model.
+> In addition to reaction-diffusion, other mathematical
+models (Murray, 1989; Maini et al., 1991) have been
+proposed to explain biological pattern formation, for example
+the chemotactic model and the neural net model.
 
 ## 需要的论文领域
 讲一下历史，首先要证明reaction-diffusion equation的可行性
