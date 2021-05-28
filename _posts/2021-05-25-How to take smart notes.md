@@ -6,18 +6,16 @@ author: "Sherril"
 header-img: "img/sky.jpeg"
 catalog: true
 header-mask: 0.3
+published: true
+use_mermaid: false
 tags:
 
   - 读书笔记
   
 ---
 
+
 This article is only for my own revision. All quotations in this article, if not specially stated, are from Sönke Ahrens's book, *How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking – for Students, Academics and Nonfiction Book Writers*.
-
-Table of Contents
-
-[toc]
-
 
 # Background
 
