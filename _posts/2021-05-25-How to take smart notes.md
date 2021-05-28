@@ -4,7 +4,7 @@ title: "Luhmann's Slip Box Method of Note-Taking"
 subtitle: ''
 author: "Sherril"
 header-img: "img/sky.jpeg"
-
+catalog: true
 header-mask: 0.3
 tags:
 
